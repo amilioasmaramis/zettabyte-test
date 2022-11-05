@@ -1,0 +1,11 @@
+const { connect } = require("../config/mongodb");
+const app = require("../app.js");
+const port = process.env.PORT || 9001;
+
+connect().then(async () => {
+  app.listen(port, () => {
+    console.log(
+      `Zettabyte Comments Server App listening at http://localhost: ${port}`,
+    );
+  });
+});
